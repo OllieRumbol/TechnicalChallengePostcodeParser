@@ -14,8 +14,8 @@ foreach(string postcode in postCodes)
 
     Console.WriteLine($"# POSTCODE: {postcode}");
     Console.WriteLine($"\tOUTWARD CODE: {parsedPostCode.OutwardCode}");
-    Console.WriteLine($"\t\tOUTWARD LETTER: {""}");
-    Console.WriteLine($"\t\tOUTWARD NUMBER: {""}");
+    Console.WriteLine($"\t\tOUTWARD LETTER: {parsedPostCode.OutwardLetter}");
+    Console.WriteLine($"\t\tOUTWARD NUMBER: {parsedPostCode.OutwardNumber}");
     Console.WriteLine($"\tINWARD CODE: {parsedPostCode.InwardCode}");
     Console.WriteLine();
     Console.WriteLine();

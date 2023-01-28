@@ -36,8 +36,23 @@ public class PostCode
         string outwardCode = postCode.Substring(0, postCode.Length - 3);
         string inwardCode = postCode.Substring(postCode.Length - 3, 3);
 
-        string outwardLetter = "";
-        string outwardNumber = "";
+        string outwardLetter;
+        string outwardNumber;
+        if (outwardCode.Length is 2)
+        {
+            outwardLetter = outwardCode.First().ToString();
+            outwardNumber = outwardCode.Last().ToString();
+        }
+        else if (outwardCode.Length is 3)
+        {
+            outwardLetter = outwardCode.First().ToString();
+            outwardNumber = outwardCode.Substring(1, 2);
+        }
+        else
+        {
+            outwardLetter = outwardCode.Substring(0, 2);
+            outwardNumber = outwardCode.Substring(2, 2);
+        }
 
         return new PostCode(outwardCode, outwardLetter, outwardNumber, inwardCode);
     }
