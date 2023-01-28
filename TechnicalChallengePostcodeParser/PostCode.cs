@@ -30,11 +30,26 @@ public class PostCode
 
         if (postCode.Length < 5 || postCode.Length > 7)
         {
-            throw new ArgumentException("Invalid post code, need to between 5 and 7 characters");
+            throw new ArgumentException("Invalid postcode, need to between 5 and 7 characters");
+        }
+
+        if (postCode.All(Char.IsLetterOrDigit) == false)
+        {
+            throw new ArgumentException("Invalid postcode, needs to only contain letters and numbers");
         }
         
         string outwardCode = postCode.Substring(0, postCode.Length - 3);
         string inwardCode = postCode.Substring(postCode.Length - 3, 3);
+
+        if(Char.IsLetter(outwardCode.First()) == false)
+        {
+            throw new ArgumentException("Postcode is invalid, outward code must start with a letter");
+        }
+
+        if (Char.IsNumber(inwardCode.First()) == false)
+        {
+            throw new ArgumentException("Postcode is invalid, inward code must start with a number");
+        }
 
         string outwardLetter;
         string outwardNumber;
