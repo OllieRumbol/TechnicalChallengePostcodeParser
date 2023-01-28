@@ -10,13 +10,13 @@ List<String> postCodes = new List<String>
 
 foreach(string postcode in postCodes)
 {
-    PostCode parsedPostCode = PostCode.FromString(postcode);
+    Postcode parsedPostcode = Postcode.FromString(postcode);
 
     Console.WriteLine($"# POSTCODE: {postcode}");
-    Console.WriteLine($"\tOUTWARD CODE: {parsedPostCode.OutwardCode}");
-    Console.WriteLine($"\t\tOUTWARD LETTER: {parsedPostCode.OutwardLetter}");
-    Console.WriteLine($"\t\tOUTWARD NUMBER: {parsedPostCode.OutwardNumber}");
-    Console.WriteLine($"\tINWARD CODE: {parsedPostCode.InwardCode}");
+    Console.WriteLine($"\tOUTWARD CODE: {parsedPostcode.OutwardCode}");
+    Console.WriteLine($"\t\tOUTWARD LETTER: {parsedPostcode.OutwardLetter}");
+    Console.WriteLine($"\t\tOUTWARD NUMBER: {parsedPostcode.OutwardNumber}");
+    Console.WriteLine($"\tINWARD CODE: {parsedPostcode.InwardCode}");
     Console.WriteLine();
     Console.WriteLine();
 }

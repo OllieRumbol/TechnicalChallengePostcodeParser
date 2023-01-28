@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechnicalChallengePostcodeParser;
 
-public class PostCode
+public class Postcode
 {
     public string OutwardCode { get; init; }
 
@@ -16,7 +16,7 @@ public class PostCode
 
     public string InwardCode { get; init; }
 
-    private PostCode(string outwardCode, string outwardLetter, string outwardNumber, string inwardCode)
+    private Postcode(string outwardCode, string outwardLetter, string outwardNumber, string inwardCode)
     {
         OutwardCode = outwardCode;
         OutwardLetter = outwardLetter;
@@ -24,22 +24,22 @@ public class PostCode
         InwardCode = inwardCode;
     } 
 
-    public static PostCode FromString (string postCode)
+    public static Postcode FromString (string postcode)
     {
-        postCode = postCode.Replace(" ", "").ToUpper();
+        postcode = postcode.Replace(" ", "").ToUpper();
 
-        if (postCode.Length < 5 || postCode.Length > 7)
+        if (postcode.Length < 5 || postcode.Length > 7)
         {
             throw new ArgumentException("Invalid postcode, need to between 5 and 7 characters");
         }
 
-        if (postCode.All(Char.IsLetterOrDigit) == false)
+        if (postcode.All(Char.IsLetterOrDigit) == false)
         {
             throw new ArgumentException("Invalid postcode, needs to only contain letters and numbers");
         }
         
-        string outwardCode = postCode.Substring(0, postCode.Length - 3);
-        string inwardCode = postCode.Substring(postCode.Length - 3, 3);
+        string outwardCode = postcode.Substring(0, postcode.Length - 3);
+        string inwardCode = postcode.Substring(postcode.Length - 3, 3);
 
         if(Char.IsLetter(outwardCode.First()) == false)
         {
@@ -69,6 +69,6 @@ public class PostCode
             outwardNumber = outwardCode.Substring(2, 2);
         }
 
-        return new PostCode(outwardCode, outwardLetter, outwardNumber, inwardCode);
+        return new Postcode(outwardCode, outwardLetter, outwardNumber, inwardCode);
     }
 }
