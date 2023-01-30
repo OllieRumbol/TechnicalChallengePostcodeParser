@@ -14,7 +14,7 @@ public class PostCodeUnitTests
         string inwardCode = "7JP";
 
         // Act 
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
 
         // Assert
         Assert.AreEqual(outwardCode, postcodeParsed.OutwardCode);
@@ -30,7 +30,7 @@ public class PostCodeUnitTests
         string outwardNumber = "23";
 
         // Act 
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
 
         //Assert
         Assert.AreEqual(outwardLetter, postcodeParsed.OutwardLetter);
@@ -45,7 +45,7 @@ public class PostCodeUnitTests
         string postcode = "CT400078DS";
 
         // Act
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
     }
 
     [TestMethod]
@@ -56,7 +56,7 @@ public class PostCodeUnitTests
         string postcode = "NY!! &*$";
 
         // Act
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
     }
 
     [TestMethod]
@@ -67,7 +67,7 @@ public class PostCodeUnitTests
         string postcode = "123 456";
 
         // Act
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
     }
 
     [TestMethod]
@@ -78,6 +78,6 @@ public class PostCodeUnitTests
         string postcode = "AB56 opn";
 
         // Act
-        PostCode postcodeParsed = PostCode.FromString(postcode);
+        Postcode postcodeParsed = Postcode.FromString(postcode);
     }
 }
